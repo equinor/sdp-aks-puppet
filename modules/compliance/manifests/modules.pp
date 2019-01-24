@@ -15,10 +15,10 @@ class compliance::modules {
     install squashfs /bin/true
     | EOT
   file { '/etc/modprobe.d/blacklist-azurebaseline.conf':
-    ensure => file,
+    ensure  => file,
     content => $module_blacklist,
-    owner => 'root',
-    group => 'root',
-    mode => '0644'
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644'
   } ~> Exec['touch-reboot']
 }
