@@ -1,2 +1,13 @@
-testing/.vagrant
-testing/ubuntu-xenial-16.04-cloudimg-console.log
+modules/compliance/bin
+modules/compliance/spec
+modules/compliance/.gitattributes
+modules/compliance/.pdkignore
+modules/compliance/.puppet-lint.rc
+modules/compliance/.rspec
+modules/compliance/.rubocop.yml
+modules/compliance/.travis.yml
+modules/compliance/.yardopts
+modules/compliance/appveyor.yml
+modules/compliance/Gemfile
+modules/compliance/Gemfile.lock
+modules/compliance/Rakefile

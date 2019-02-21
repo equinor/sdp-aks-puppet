@@ -2,95 +2,95 @@ class compliance::services {
 
   service { 'xinetd':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'avahi-daemon':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'avahi-daemon':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'cups':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'isc-dhcp-server':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'isc-dhcp-server6':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'slapd':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'nfs-server':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'rpcbind':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'bind9':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'vsftpd':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'apache2':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'dovecot':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'smbd':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'squid':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'snmpd':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'rsyncd':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { 'nis':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { '':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { '':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { '':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { '':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   service { '':
     ensure => 'stopped',
-    enable => 'false'
+    enable => false
   }
   xinetd::service { 'telnet':
     disabled => 'yes',
