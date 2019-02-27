@@ -8,10 +8,6 @@ class compliance::services {
     ensure => 'stopped',
     enable => false
   }
-  service { 'avahi-daemon':
-    ensure => 'stopped',
-    enable => false
-  }
   service { 'cups':
     ensure => 'stopped',
     enable => false
@@ -72,26 +68,6 @@ class compliance::services {
     ensure => 'stopped',
     enable => false
   }
-  service { '':
-    ensure => 'stopped',
-    enable => false
-  }
-  service { '':
-    ensure => 'stopped',
-    enable => false
-  }
-  service { '':
-    ensure => 'stopped',
-    enable => false
-  }
-  service { '':
-    ensure => 'stopped',
-    enable => false
-  }
-  service { '':
-    ensure => 'stopped',
-    enable => false
-  }
   xinetd::service { 'telnet':
     disabled => 'yes',
   }
@@ -123,12 +99,6 @@ class compliance::services {
     disabled => 'yes',
   }
   xinetd::service { 'tftp':
-    disabled => 'yes',
-  }
-  xinetd::service { 'rexec':
-    disabled => 'yes',
-  }
-  xinetd::service { 'rexec':
     disabled => 'yes',
   }
   xinetd::service { 'rexec':

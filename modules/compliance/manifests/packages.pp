@@ -6,22 +6,4 @@ class compliance::packages {
   package { 'xserver-xorg':
     ensure => 'purged',
   }
-  package { '':
-    ensure => 'purged',
-  }
-  package { '':
-    ensure => 'purged',
-  }
-  package { '':
-    ensure => 'purged',
-  }
-  package { '':
-    ensure => 'purged',
-  }
-  package { '':
-    ensure => 'purged',
-  }
-  package { '':
-    ensure => 'purged',
-  }
 }
