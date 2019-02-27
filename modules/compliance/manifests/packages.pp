@@ -6,4 +6,22 @@ class compliance::packages {
   package { 'xserver-xorg':
     ensure => 'purged',
   }
+  package { 'nis':
+    ensure => 'purged',
+  }
+  package { 'rsh-redone-client':
+    ensure => 'purged',
+  }
+  package { 'rsh-client':
+    ensure => 'purged',
+  }
+  package { 'talk':
+    ensure => 'purged',
+  }
+  package { 'telnet':
+    ensure => 'purged',
+  }
+  package { 'ldap-utils':
+    ensure => 'purged',
+  }
 }
