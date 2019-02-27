@@ -1,4 +1,3 @@
-
 class compliance::auditd {
   include auditd
 
