@@ -32,6 +32,9 @@ helm repo add weaveworks https://weaveworks.github.io/flux
 
 helm install --name flux --set rbac.create=true --set helmOperator.create=true --namespace infrastructure weaveworks/flux
 
+# Taint master
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
 # Apply aks-puppet-helmrelease
 cat << EOF > /home/vagrant/git/manifests/aks-node-puppet.yaml
 ---
@@ -53,4 +56,5 @@ spec:
       GIT_REPO: http://github.com/equinor/sdp-aks-puppet.git
       GIT_BRANCH: develop
 EOF
+
 kubectl apply -f /home/vagrant/git//manifests/aks-node-puppet.yaml
