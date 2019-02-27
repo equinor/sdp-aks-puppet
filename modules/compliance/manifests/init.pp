@@ -6,4 +6,5 @@ class compliance {
   include compliance::docker_icc
   include compliance::night_sentinel
   include compliance::services
+  include compliance::packages
 }
