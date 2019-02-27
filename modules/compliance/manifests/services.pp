@@ -68,40 +68,4 @@ class compliance::services {
     ensure => 'stopped',
     enable => false
   }
-  xinetd::service { 'telnet':
-    disabled => 'yes',
-  }
-  xinetd::service { 'chargen':
-    disabled => 'yes',
-  }
-  xinetd::service { 'daytime':
-    disabled => 'yes',
-  }
-  xinetd::service { 'discard':
-    disabled => 'yes',
-  }
-  xinetd::service { 'echo':
-    disabled => 'yes',
-  }
-  xinetd::service { 'time':
-    disabled => 'yes',
-  }
-  xinetd::service { 'rsh':
-    disabled => 'yes',
-  }
-  xinetd::service { 'rlogin':
-    disabled => 'yes',
-  }
-  xinetd::service { 'rexec':
-    disabled => 'yes',
-  }
-  xinetd::service { 'talk':
-    disabled => 'yes',
-  }
-  xinetd::service { 'tftp':
-    disabled => 'yes',
-  }
-  xinetd::service { 'rexec':
-    disabled => 'yes',
-  }
 }

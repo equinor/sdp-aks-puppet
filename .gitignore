@@ -11,3 +11,5 @@ modules/compliance/appveyor.yml
 modules/compliance/Gemfile
 modules/compliance/Gemfile.lock
 modules/compliance/Rakefile
+testing/.vagrant
+testing/ubuntu-xenial-16.04-cloudimg-console.log
