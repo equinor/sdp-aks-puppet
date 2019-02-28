@@ -1,7 +1,6 @@
 class compliance::auditd {
   include auditd
 
-  ## AUDIT DOCKER ##
   auditd::rule { 'watch /usr/bin/docker':
     content => '-w /usr/bin/docker -p wa',
     order   => 101
