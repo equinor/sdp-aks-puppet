@@ -39,9 +39,14 @@ $configureBox = <<-SCRIPT
     # reason for not using docker provision is that it always installs latest version of the docker, but kubeadm requires 17.03 or older
     apt-get update
     apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-    add-apt-repository "deb https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
-    apt-get update && apt-get install -y docker-ce=$(apt-cache madison docker-ce | grep 17.03 | head -1 | awk '{print $3}')
+    #curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+    #add-apt-repository "deb https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
+    #apt-get update && apt-get install -y docker-ce=$(apt-cache madison docker-ce | grep 17.03 | head -1 | awk '{print $3}')
+
+    # install moby from microsoft package repository
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+    add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/$(. /etc/os-release; echo "$VERSION_ID")/prod.list)"
+    apt-get update && apt-get install -y moby-engine moby-cli
 
     # run docker commands as vagrant user (sudo not required)
     usermod -aG docker vagrant
@@ -76,7 +81,7 @@ $configureMaster = <<-SCRIPT
 
     # install k8s master
     HOST_NAME=$(hostname -s)
-    kubeadm init --apiserver-advertise-address=$IP_ADDR --apiserver-cert-extra-sans=$IP_ADDR  --node-name $HOST_NAME --pod-network-cidr=172.16.0.0/16
+    kubeadm init --ignore-preflight-errors=SystemVerification --apiserver-advertise-address=$IP_ADDR --apiserver-cert-extra-sans=$IP_ADDR  --node-name $HOST_NAME --pod-network-cidr=172.16.0.0/16
 
     #copying credentials to regular user - vagrant
     sudo --user=vagrant mkdir -p /home/vagrant/.kube
@@ -89,6 +94,7 @@ $configureMaster = <<-SCRIPT
     kubectl apply -f https://raw.githubusercontent.com/ecomm-integration-ballerina/kubernetes-cluster/master/calico/calico.yaml
 
     kubeadm token create --print-join-command >> /etc/kubeadm_join_cmd.sh
+    sed -i ' 1 s/.*/& --ignore-preflight-errors=SystemVerification/' /etc/kubeadm_join_cmd.sh
     chmod +x /etc/kubeadm_join_cmd.sh
 
     # required for setting up password less ssh between guest VMs
