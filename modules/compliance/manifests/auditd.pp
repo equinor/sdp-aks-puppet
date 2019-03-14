@@ -1,5 +1,4 @@
 class compliance::auditd {
-  include auditd
 
   auditd::rule { 'watch /usr/bin/docker':
     content => '-w /usr/bin/docker -p wa',

@@ -6,7 +6,8 @@
   "license": "Apache-2.0",
   "source": "",
   "dependencies": [
-
+    { "name":"kemra102/auditd","version_requirement":">= 2.2.0" },
+    { "name":"puppet/logrotate","version_requirement":">= 3.4.0" }
   ],
   "operatingsystem_support": [
     {
