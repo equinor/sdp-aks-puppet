@@ -6,6 +6,16 @@ class cis::ubuntu::xenial::s2 {
     ensure => 'stopped',
     enable => false
   }
+
+  # 2.2.1.1 and 2.2.1.2
+  class { 'ntp':
+    servers  => [ 'ntp.ubuntu.com' ],
+    restrict => [
+      '-4 default kod nomodify notrap nopeer noquery',
+      '-6 default kod nomodify notrap nopeer noquery'
+    ]
+  }
+
   # 2.2.3
   service { 'avahi-daemon':
     ensure => 'stopped',
