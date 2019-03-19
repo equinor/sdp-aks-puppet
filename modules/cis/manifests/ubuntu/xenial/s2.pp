@@ -49,4 +49,9 @@ class cis::ubuntu::xenial::s2 {
       '-6 default kod nomodify notrap nopeer noquery'
     ]
   }
+
+  # 2.2.15 - Not used, so make sure not installed
+  package { 'postfix':
+    ensure => 'purged'
+  }
 }
