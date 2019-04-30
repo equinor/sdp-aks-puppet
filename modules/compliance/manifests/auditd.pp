@@ -1,7 +1,7 @@
 class compliance::auditd {
 
   auditd::rule { 'docker audit rules':
-    content => '-w /usr/bin/docker -p wa -k docker'
+    content => '-w /usr/bin/docker -p wa -k docker
 # -w /var/lib/docker -p wa -k docker
  -w /etc/docker -p wa -k docker
 # -w /lib/systemd/system/docker.service -p wa -k docker
