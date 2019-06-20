@@ -5,6 +5,6 @@ class cis::kubernetes::aks::s2 {
   file { '/var/lib/kubelet/config.yaml':
     owner => 'root',
     group => 'root',
-    mode  => '0444'
+    mode  => '0644'
   }
 }
