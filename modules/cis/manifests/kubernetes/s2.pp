@@ -2,9 +2,9 @@
 class cis::kubernetes::s2 {
 
   # 2.2.9 and 2.2.10
-  file { '/var/lib/kubelet/kubeconfig':
+  file { '/var/lib/kubelet/config.yaml':
     owner => 'root',
     group => 'root',
-    mode  => '0644'
+    mode  => '0444'
   }
 }
